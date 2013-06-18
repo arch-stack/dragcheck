@@ -1,0 +1,24 @@
+{
+    "name": "dragcheck",
+    "version": "0.1.0",
+    "title": "dragcheck - A jQuery javascript drag checking plugin for checkboxes",
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/aleximplode/dragcheck/blob/master/LICENSE"
+    }],
+    "dependencies": {
+        "jquery": "*"
+    },
+    "author": {
+        "name": "Alexander Godlewski"
+    },
+    "description": "The overall goal of this plugin is to provide an easy way for the user to click and drag down to check checkboxes instead of having to slowly click each one. The original use was for checkboxes in the first column of a table with tabular data",
+    "keywords": [
+        "drag",
+        "checkbox",
+        "check",
+        "select"
+    ],
+    "homepage": "https://github.com/aleximplode/dragcheck",
+    "bugs": "https://github.com/aleximplode/dragcheck/issues"
+}
