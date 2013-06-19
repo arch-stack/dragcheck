@@ -21,7 +21,9 @@
                     startIndex = (o.container ? $obj.parents(o.container).index() : $obj.index);
 
                     $obj.one('mouseout', function () {
-                        o.onSelect($(this), state);
+                        if (enabled) {
+                            o.onSelect($(this), state);
+                        }
                     });
                 })
                 .mouseover(function () {
