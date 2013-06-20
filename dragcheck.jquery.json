@@ -1,6 +1,6 @@
 {
     "name": "dragcheck",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "title": "dragcheck - A jQuery javascript drag checking plugin for checkboxes",
     "licenses": [{
         "type": "MIT",
