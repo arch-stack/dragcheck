@@ -3,32 +3,35 @@ dragcheck
 
 A jQuery javascript drag checking plugin for checkboxes
 
+[Basic demo](http://jsfiddle.net/arch/Qp5GP/)
+[Add class on select](http://jsfiddle.net/arch/c4fCP/2/)
+
 Allows clicking and then dragging across checkboxes to check/uncheck them
 If you skip a bunch and go to a later checkbox it will fill in the missing ones in between
 
-To use in a basic case:
+To use in a basic table case:
 
     $('selector').dragcheck({
         container: 'tr',
         onSelect: function(obj, state) {
-            obj.attr('checked', state);
+            obj.prop('checked', state);
         }
     });
 
 Options:
 
 - container: The element that contains the checkboxes and has other sibling container elements that contain checkboxes
-For example if you do:
 
+For example if you do:
 
     $('table tbody').dragcheck({
         container: 'tr',
         onSelect: function(obj, state) {
-            obj.attr('checked', state);
+            obj.prop('checked', state);
         }
     });
 
-Then the checkboxes in the trs will be affected by dragcheck
+Then the checkboxes in the tbodys trs will be affected by dragcheck but this will exclude any checkboxes in the thead
 
 - onSelect: When the checkbox is selected to be checked, this method will be called. You can choose to check the box,
 or run a condition and optionally check the box or do anything you want
