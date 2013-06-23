@@ -4,6 +4,7 @@ dragcheck
 A jQuery javascript drag checking plugin for checkboxes
 
 [Basic demo](http://jsfiddle.net/arch/Qp5GP/)
+
 [Add class on select](http://jsfiddle.net/arch/c4fCP/2/)
 
 Allows clicking and then dragging across checkboxes to check/uncheck them
