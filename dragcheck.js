@@ -18,7 +18,7 @@
                     var $obj = $(this);
                     enabled = true;
                     state = !$obj.is(':checked');
-                    startIndex = (o.container ? $obj.parents(o.container).index() : $obj.index);
+                    startIndex = (o.container ? $obj.parents(o.container).index() : $obj.index());
 
                     $obj.one('mouseout', function () {
                         if (enabled) {
