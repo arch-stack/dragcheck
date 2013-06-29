@@ -37,6 +37,10 @@ Then the checkboxes in the tbodys trs will be affected by dragcheck but this wil
 - onSelect: When the checkbox is selected to be checked, this method will be called. You can choose to check the box,
 or run a condition and optionally check the box or do anything you want
 
+- labelSelect: When set to true, the labels for the checkboxes have the same effect as using the checkboxes themselves (Note that in the case of
+the label being a parent of the checkbox, the mousedown and mouseover events will stop propagating through the checkbox
+to prevent an infinite event loop)
+
 
 The overall goal of this plugin is to provide an easy way for the user to click and drag down to check checkboxes instead
 of having to slowly click each one. The original use was for checkboxes in the first column of a table with tabular data

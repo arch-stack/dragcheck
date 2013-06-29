@@ -13,7 +13,8 @@
             // meta data plugin support
             var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
 
-            $(':checkbox', $this)
+            var $checkboxes = $(':checkbox', $this);
+            $checkboxes
                 .mousedown(function () {
                     var $obj = $(this);
                     enabled = true;
@@ -52,6 +53,27 @@
                     }
                 });
 
+            if(o.labelSelect) {
+                $checkboxes
+                    .each(function() {
+                            var $obj = $(this);
+                            var $parent = $obj.parent();
+                            if(!$parent.is('label')) {
+                                $parent = $('label[for="' + $obj.attr('name') + '"]');
+                                $parent.on('click', function() { $obj.trigger('click'); });
+                            }
+                            else {
+                                // Mandatory if the label is the parent of the checkbox because it will propagate
+                                //    and cause an infinite event loop
+                                $obj.on('mousedown', function(event) { event.stopPropagation(); });
+                                $obj.on('mouseover', function(event) { event.stopPropagation(); });
+                            }
+
+                            $parent.on('mousedown', function(event) { event.stopPropagation(); $obj.trigger('mousedown'); });
+                            $parent.on('mouseover', function(event) { event.stopPropagation(); $obj.trigger('mouseover'); });
+                        });
+            }
+
             $('html').mouseup(function () {
                 enabled = false;
             });
@@ -60,6 +82,7 @@
     
     $.fn.dragcheck.defaults = {
         container: null,
+        labelSelect: false,
         onSelect: function (obj, state) { }
     };
 })(jQuery);
